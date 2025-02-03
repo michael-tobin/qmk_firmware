@@ -441,7 +441,7 @@ void matrix_scan_kb(void) {
     }
     else {
         uint8_t layer = get_highest_layer(layer_state);
-        if(layer != 1) {
+        if(layer != 4) {
         ergodox_right_led_3_off();
         }
     }

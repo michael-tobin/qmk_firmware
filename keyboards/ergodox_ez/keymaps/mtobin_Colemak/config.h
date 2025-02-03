@@ -1,6 +1,6 @@
 #pragma once
 
-#define ORYX_CONFIGURATOR
+//#define ORYX_CONFIGURATOR
 //#define IGNORE_MOD_TAP_INTERRUPT
 #define USB_SUSPEND_WAKEUP_DELAY 0
 #define NO_AUTO_SHIFT_TAB
@@ -8,4 +8,5 @@
 #define CAPS_LOCK_STATUS
 #define RGB_MATRIX_STARTUP_SPD 60
 #define DISABLE_LEADER
+
 

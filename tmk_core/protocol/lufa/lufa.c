@@ -1100,7 +1100,16 @@ void protocol_post_task(void) {
     USB_USBTask();
 #endif
 }
-
+/*
 uint16_t CALLBACK_USB_GetDescriptor(const uint16_t wValue, const uint16_t wIndex, const void **const DescriptorAddress) {
     return get_usb_descriptor(wValue, wIndex, DescriptorAddress);
+}*/
+
+extern const USB_Descriptor_Device_t PROGMEM DeviceDescriptor;
+/*uint16_t CALLBACK_USB_GetDescriptor(const uint16_t wValue, const uint16_t wIndex, const void **const DescriptorAddress) {
+    uint16_t wLength = DeviceDescriptor.Header.Size;
+    return get_usb_descriptor(wValue, wIndex, wLength, DescriptorAddress);
+}*/
+uint16_t CALLBACK_USB_GetDescriptor(const uint16_t wValue, const uint16_t wIndex, const void **const DescriptorAddress) {
+    return get_usb_descriptor(wValue, wIndex, USB_ControlRequest.wLength, DescriptorAddress);
 }
